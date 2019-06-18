@@ -1,0 +1,43 @@
+# Project: ©âÅÒ¶i¶¥ª©
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o work/PickNum.o work/WordGenerator.o work/Console.o work/Frame.o work/Mode_PickNum.o
+LINKOBJ  = main.o work/PickNum.o work/WordGenerator.o work/Console.o work/Frame.o work/Mode_PickNum.o
+LIBS     = -L"C:/Dev-Cpp/MinGW64/lib" -L"C:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Dev-Cpp/MinGW64/include" -I"C:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Dev-Cpp/MinGW64/include" -I"C:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = ©âÅÒ¶i¶¥ª©.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+work/PickNum.o: work/PickNum.cpp
+	$(CPP) -c work/PickNum.cpp -o work/PickNum.o $(CXXFLAGS)
+
+work/WordGenerator.o: work/WordGenerator.cpp
+	$(CPP) -c work/WordGenerator.cpp -o work/WordGenerator.o $(CXXFLAGS)
+
+work/Console.o: work/Console.cpp
+	$(CPP) -c work/Console.cpp -o work/Console.o $(CXXFLAGS)
+
+work/Frame.o: work/Frame.cpp
+	$(CPP) -c work/Frame.cpp -o work/Frame.o $(CXXFLAGS)
+
+work/Mode_PickNum.o: work/Mode_PickNum.cpp
+	$(CPP) -c work/Mode_PickNum.cpp -o work/Mode_PickNum.o $(CXXFLAGS)
